@@ -19,32 +19,47 @@ function addBookToLibrary(mybook) {
   return myLibrary.push(mybook);
 }
 
+//reset the form
+function resetForm() {
+  const bookForm = document.getElementById("newBook").reset();
+}
+
 // Getting a new book from the form
-document.getElementById("newBook").addEventListener("submit", function (event) {
-  event.preventDefault(); //Prevent the default form submission behavior
-  // Get the form values
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
-  const isRead = document.getElementById("isRead").value;
+function addBookFunc() {
+  document
+    .getElementById("newBook")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); //Prevent the default form submission behavior
+      // Get the form values
+      const title = document.getElementById("title").value;
+      const author = document.getElementById("author").value;
+      const pages = document.getElementById("pages").value;
+      const isRead = document.getElementById("isRead").value;
 
-  // Create a Book Object with the form values
-  const newBook = new Book(title, author, pages, isRead);
+      // Create a Book Object with the form values
+      const newBook = new Book(title, author, pages, isRead);
 
-  // Add new book to library
-  addBookToLibrary(newBook);
-  console.log(myLibrary);
+      //Create an element to display the Book info
+      const bookInfo = document.createElement("div");
 
-  // reset the form
-  document.getElementById("title").value = "";
-  document.getElementById("pages").value = "";
-  document.getElementById("author").value = "";
-  document.getElementById("isRead").value = "";
-});
-// const book1 = new Book("the odemaya", "leon", 200, "Yes");
-// book1.info();
+      bookInfo.innerHTML = `Title: ${title}, Author: ${author}`;
 
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(elems, options);
-});
+      // Append the new element to the page
+      document.getElementById("bookInfo").appendChild(bookInfo);
+
+      // Add new book to library
+      addBookToLibrary(newBook);
+      console.log(myLibrary);
+
+      // reset the form
+      resetForm();
+    });
+}
+
+addBookFunc();
+
+function showLibContentent(){
+  document.getElementById()
+}
+
+//
