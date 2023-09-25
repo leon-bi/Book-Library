@@ -12,94 +12,103 @@
       crossorigin="anonymous"
     />
   </head>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="d-flex flex-row align-bottom">
+      <a class="navbar-brand" href="#">
+        <img src="./images/me.png" alt="" width="70" height="70" />
+      </a>
+      <h1 class="text-light">My Library</h1>
+    </div>
+  </nav>
+
   <body>
-    <div class="position-relative">
+    <div class="container m-lg-2">
       <button
         type="button"
-        class="btn btn-primary position-absolute top-0 start-50 translate-middle"
+        class="btn btn-dark position-absolute start-50 translate-middle-x"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        + Book
+        + Add Book
       </button>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add a Book</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="" id="newBook">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    required
+                    class="form-control"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Author</label>
+                  <input
+                    type="text"
+                    id="author"
+                    name="author"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputAddress" class="form-label">Pages</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="pages"
+                    placeholder="200"
+                  />
+                </div>
+
+                <div class="col-12 md-6">
+                  <div class="form-check">
+                    <label class="form-check-label" for="gridCheck">
+                      Have you read this book?:
+                    </label>
+
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="isRead"
+                      name="isRead"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 md-6">
+                  <button type="submit" value="submit" class="btn btn-success">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Button trigger modal -->
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a Book</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="" id="newBook">
-              <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Title</label>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  required
-                  class="form-control"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Author</label>
-                <input
-                  type="text"
-                  id="author"
-                  name="author"
-                  class="form-control"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="inputAddress" class="form-label">Pages</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="pages"
-                  placeholder="200"
-                />
-              </div>
-
-              <div class="col-12 md-6">
-                <div class="form-check">
-                  <label class="form-check-label" for="gridCheck">
-                    Have you read this book?:
-                  </label>
-
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="isRead"
-                    name="isRead"
-                  />
-                </div>
-              </div>
-              <div class="col-12 md-6">
-                <button type="submit" value="submit" class="btn btn-success">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
   <script src="main.js"></script>
   <script
