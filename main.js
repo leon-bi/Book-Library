@@ -38,28 +38,40 @@ function addBookFunc() {
 
       // Create a Book Object with the form values
       const newBook = new Book(title, author, pages, isRead);
-
-      //Create an element to display the Book info
-      const bookInfo = document.createElement("div");
-
-      bookInfo.innerHTML = `Title: ${title}, Author: ${author}`;
-
-      // Append the new element to the page
-      document.getElementById("bookInfo").appendChild(bookInfo);
-
       // Add new book to library
       addBookToLibrary(newBook);
+      resetForm();
       console.log(myLibrary);
 
-      // reset the form
-      resetForm();
+      var div = document.querySelector("#bookList");
+
+      div.innerHTML =
+        div.innerHTML +
+        `<div class="card" id="bookInfo"style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Title: ${newBook.title}</h5>
+          <p class="card-text">Author: ${newBook.author}</p>
+          <p class="card-text">Pages: ${newBook.pages}</p>
+  
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>`;
+      
+      return newBook;
     });
 }
 
 addBookFunc();
 
-function showLibContentent(){
-  document.getElementById()
+function showLibContentent() {
+  document.getElementById();
 }
 
 //
