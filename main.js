@@ -59,8 +59,14 @@ function addBookFunc() {
           
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <button
+                type="delete"
+                class="btn-danger"
+                id="delete"
+                
+              >Remove</button>
+
+          <a href="#" class="card-link">Read</a>
         </div>
       </div>`;
       
@@ -68,6 +74,11 @@ function addBookFunc() {
     });
 }
 
+function deleteCard(){
+  document.getElementById("delete").addEventListener("delete",function(){
+    
+  })
+}
 addBookFunc();
 
 function showLibContentent() {
